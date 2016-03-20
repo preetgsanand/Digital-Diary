@@ -1,0 +1,43 @@
+{% load static %}
+<html>
+	<style>
+		@font-face {
+			font-family: Junction;
+			src: url("/static/font/Junction.otf") format("opentype");
+		}
+		body {
+			background:url(/static/night.jpeg) fixed no-repeat!important;
+			font-family:Junction, serif !important;
+		}
+		div.col-md-3 {
+			padding-left:0px !important;
+			padding-right:0px !important;
+			align:center !important;
+			margin-top:50px !important;
+			opacity:0.9!important;
+			padding-top:10px;
+			text-align: center;
+			background-color:white !important;
+			opacity:0.9 !important;
+			color:black;
+			border-radius:1px;
+		}
+		img {
+			border-radius:1px !important;
+			width:100%!important;
+			height:300px !important;
+		}
+	</style>
+	<body>
+		{% include "navbar.html" %}
+		<div class = "row" style = "padding-left:150px;">
+			{%for obj in queryset%}
+			<div class = "col-lg-4 col-lg-offset-1 col-md-3 col-md-offset-2 col-sm-3 col-sm-offset-1">
+				<label>{{obj.highlight}} <br> {{obj.date}}</label><br>
+				<img src = "/media/{{obj.photo}}"><br>
+			</div>
+			{%endfor%}
+		</div>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	</body>
+</html>

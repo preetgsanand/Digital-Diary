@@ -1,0 +1,29 @@
+{% load crispy_forms_tags%}
+<style>
+	form {
+		padding:20;
+		height:300px;
+		width:500px;
+		background-color: black;
+		opacity:0.9;
+		border-radius:5px;
+		color:white;
+		vertical-align: center;
+		align:center;
+	}
+	input {
+		border-radius:5px;
+		border-color:black;
+		vertical-align: center;
+	}
+	textarea {
+		border-radius: 5px;
+		border-color:black;
+	}
+</style>
+<div>
+	<form method ="POST" action = "">{% csrf_token %}
+		{{form|crispy}}
+		<input type = "submit" value = "Submit" class = "btn btn-primary"/>
+	</form>
+</div>
