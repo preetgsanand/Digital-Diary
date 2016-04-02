@@ -6,35 +6,53 @@
 			src: url("/static/font/Junction.otf") format("opentype");
 		}
 		body {
-			background:url(/static/night.jpeg) fixed no-repeat!important;
+			background:url(/static/diary.jpg) fixed no-repeat 100%!important;
 			font-family:Junction, serif !important;
 		}
-		div.col-md-3 {
-			padding-left:0px !important;
-			padding-right:0px !important;
+		div.col-md-4 {
+			border-width:5px !important;
+			border-color:black !important;
 			align:center !important;
 			margin-top:50px !important;
-			opacity:0.9!important;
-			padding-top:10px;
+			padding:10px;
 			text-align: center;
 			background-color:white !important;
 			opacity:0.9 !important;
 			color:black;
 			border-radius:1px;
 		}
-		img {
+		.crop {
+			width:100% !important;
+			height:300px !important;
+			overflow:hidden !important;
+		}
+		.crop img {
 			border-radius:1px !important;
 			width:100%!important;
-			height:300px !important;
+			height:auto !important;
+			margin-bottom:10px !important;
+		}
+		label.title {
+			font-size:20px !important;
+			cursor:pointer !important;
+		}
+		label.date {
+			text-align: right !important;
+			font-weight: bold;
+			margin-left:60% !important;
 		}
 	</style>
 	<body>
 		{% include "navbar.html" %}
 		<div class = "row" style = "padding-left:150px;">
 			{%for obj in queryset%}
-			<div class = "col-lg-4 col-lg-offset-1 col-md-3 col-md-offset-2 col-sm-3 col-sm-offset-1">
-				<label>{{obj.highlight}} <br> {{obj.date}}</label><br>
-				<img src = "/media/{{obj.photo}}"><br>
+			<div class = "col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-8 col-sm-offset-1 col-xs-8">
+				<a href = "{{obj.get_absolute_url}}"><label class="title">{{obj.highlight}}</label></a><br>
+				<div class = "crop">
+					<img src = "/media/{{obj.photo}}">
+				</div><br>
+				<i><label class = "date">- {{obj.date}}<br>
+					last edited : {{obj.updated}}</label></i>
 			</div>
 			{%endfor%}
 		</div>

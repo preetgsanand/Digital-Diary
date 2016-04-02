@@ -7,17 +7,17 @@
 		}
 		body {
 			font-family:Junction, serif !important;
-			background:url(/static/night.jpeg) no-repeat fixed;
+			background:url(/static/diary.jpg) no-repeat fixed 100%;
 		}
-		div.col-md-6 {
+		div.col-md-5 {
+			padding:50px !important;
 			opacity:0.9 !important;
 			margin-top:100px !important;
 			background-color:white;
 			border-radius:1px;
-			width:750px;
 		}
 		h2 {
-			width:700px;
+			width:100%;
 			padding:10px;
 			background-color:#3399CC;
 			border-radius:1px;
@@ -27,7 +27,7 @@
 			margin-left:30px;
 		}
 		form {
-			width:600px;
+			width:80%;
 			padding:20px;
 		}
 		input {
@@ -46,7 +46,7 @@
 			transition: all 1s ease !important;
 		}
 		textarea:focus {
-			background-color:#3a7999 !important;
+			background-color:#0099CC !important;
 			color:white !important;
 			border-width:2px !important;
 			border-color: white!important;
@@ -64,7 +64,7 @@
 <body>
 	{% include 'navbar.html' %}
 	<div class = "row">
-		<div class = "col-md-6 col-md-offset-2 col-sm-4 col-sm-offset-1">
+		<div class = "col-md-5 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 			<h2>{{title}}</h2>
 			<form method='POST' enctype="multipart/form-data">
 				{{form|crispy}}{% csrf_token%}

@@ -14,12 +14,25 @@
 		margin-top:10px;
 	}
 	div.col-md-1 {
+		margin-top:5px !important;
 		cursor:pointer;
-		padding:5px;
+		padding-top:5px !important;
 		font-family:Junction,serif !important;
 		vertical-align: center;
 		text-align: center;
-		height:60px;
+		height:50px;
+		margin-left:20px !important;
+		border-radius: 5px;
+		border-color:black;
+		overflow:hidden;
+	}
+	div.col-md-2 {
+		cursor:pointer;
+		padding-top:5px !important;
+		font-family:Junction,serif !important;
+		vertical-align: center;
+		text-align: center;
+		height:50px;
 		margin-left:20px !important;
 		border-radius: 5px;
 		border-color:black;
@@ -29,38 +42,51 @@
 		font-family: FontAwesome;
 		content:"\f015";
 		position: absolute;
-		left:-20px;
-		top:11px;
+		left:-15px;
+		top:25px;
 		transition: all 200ms ease;
 	}
 	div#home:hover:before {
-		left:17px;
+		left:44% !important;
 		color:green;
 	}
 	div#contact:before{
 		font-family: FontAwesome;
 		content:"\f095";
 		position: absolute;
-		left:-20px;
-		top:11px;
+		left:-15px;
+		top:25px;
 		transition: all 200ms ease;
 	}
 	div#contact:hover:before {
-		left:2px;
+		left:44% !important;
 		color:red;
 	}
 	div#about:before{
 		font-family: FontAwesome;
 		content:"\f007";
 		position: absolute;
-		left:-20px;
-		top:11px;
+		left:-15px;
+		top:25px;
 		transition: all 200ms ease;
 	}
 	div#about:hover:before {
-		left:5px;
-		top:12px;
+		left:44% !important;
 		color:#3a7999;
+	}
+	input#search {
+		margin-top:0px !important;
+		text-align: center !important;
+		margin-left:0px !important;
+		padding-top:3px !important;
+		width:100% !important;
+		border-color:#3399CC !important;
+		border-width: 2px !important;
+		border-radius:1px !important;
+		transition: all 0.5s ease !important;
+	}
+	input#search:hover {
+		opacity:0.5 !important;
 	}
 	input {
 		border-color:black !important;
@@ -69,7 +95,7 @@
 		text-align:center;
 		margin-top:10px !important;
 		height:40px !important;
-		border-radius:1px;
+		border-radius:1px !important;
 		width:100%;
 		border-width: 2px !important;
 		transition: all 1s ease !important;
@@ -82,7 +108,7 @@
 		font-weight:bold !important;
 	}
 	input:focus {
-		background-color:#3a7999 !important;
+		background-color:#0099CC!important;
 		color:white !important;
 		border-width:2px !important;
 		border-color: white!important;
@@ -98,22 +124,24 @@
 <body>
 	<div id = "topnavbar" class = "container">
 		<div class = "row">
-			<div class = "col-md-1 col-sm-1 col-xs-1" id = "home">
+			<div class = "col-md-1 col-sm-2 col-xs-2" id = "home">
 				<a href = "/"><h5>Home</h5></a>
 			</div>
-			<div class = "col-lg-8 col-md-7 col-sm-6 col-xs-4">
+			<div class = "col-lg-6 col-md-6 col-sm-4 col-xs-2">
 			<input type = "text" class = "form-control" placeholder="Wanna Search Something?"/>
 			</div>
-			<div class = "col-md-1 col-sm-1 col-xs-1" id = "about">
-				<a href = "/about"><h5>About Us</h5></a>
+			<div class = "col-md-1 col-sm-1 col-xs-1">
+				<input type = "button" value = "Search" id = "search"/>
 			</div>
-			<div class = "col-md-1 col-sm-1 col-xs-1" id = "contact">
-				<a href = "/contact"><h5>Contact Us</h5></a>
+			<div class = "col-md-1 col-sm-1 col-xs-2" id = "about">
+				<a href = "/about"><h5>About</h5></a>
+			</div>
+			<div class = "col-md-1 col-sm-1 col-xs-2" id = "contact">
+				<a href = "/contact"><h5>Contact</h5></a>
 			</div>
 		</div>
 	</div>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-	<script src = "js/jquery-2.2.0.min.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from .models import Page
 from .forms import PageForm
 # Create your views here.
@@ -25,3 +25,10 @@ def list(request):
 		'queryset': queryset,
 	}
 	return render(request, 'list.html', context)
+
+def detail(request,id):
+	query = get_object_or_404(Page,id=id)
+	context = {
+		"query":query,
+	}
+	return render(request, "detail.html", context)

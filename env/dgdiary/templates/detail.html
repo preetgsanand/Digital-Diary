@@ -1,0 +1,79 @@
+{% load static %}
+<html>
+	<style>
+		@font-face {
+			font-family: Junction;
+			src: url("/static/font/Junction.otf") format("opentype");
+		}
+		body {
+			background:url(/static/diary.jpg) fixed no-repeat 100%!important;
+			font-family:Junction, serif !important;
+		}
+		div.col-lg-7 {
+			align:center !important;
+			margin-top:50px !important;
+			opacity:0.9!important;
+			padding:10px;
+			text-align: center;
+			background-color:white !important;
+			opacity:0.9 !important;
+			color:black;
+			border-radius:1px;
+		}
+		.crop {
+			width:100%;
+			height:300px !important;
+			overflow:hidden !important;
+		}
+		.crop img {
+			border-radius:1px !important;
+			height:auto;
+			width:100% !important;
+			margin: -75px 0 0;
+		}
+		p.text {
+			text-align: justify !important;
+			padding:20px !important;
+			width:50% !important;
+		}
+		p.buttons {
+			padding:40px !important;
+			width:50% !important;
+		}
+		label.title {
+			font-size: 30px !important
+		}
+		label.date {
+			font-size:15px !important;
+			margin-bottom:10px !important;
+			font-weight: bold;
+		}
+		i {
+			padding:10px !important;
+			text-shadow: 2px !important;
+			font-size: 1.5em !important;
+		}
+	</style>
+	<body>
+		{% include "navbar.html" %}
+		<div class = "row" style = "padding-left:150px;">
+			<div class = "col-lg-7 col-lg-offset-2 col-md-6 col-md-offset-2 col-sm-7 col-sm-offset-1 col-xs-8 col-xs-offset-0">
+				<label class = "title">{{query.highlight}}</label><br>
+				<div class = "crop">
+					<img src = "/media/{{query.photo}}">
+				</div><br>
+				<p class = "text" style = "float:left;">{{query.content}}</p>
+				<p class = "buttons" style = "float:right;">
+					<i><label class = "date">- {{query.date}}<br>
+					last edited : {{query.updated}}</label></i><br><br>
+					<i class="fa fa-pencil-square-o"></i>
+					<i class="fa fa-times"></i>
+					<a href = "/list"><i class="fa fa-arrow-left"></i></a>
+				</p>
+			</div>
+			</div>
+		</div>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+	</body>
+</html>
