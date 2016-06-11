@@ -6,7 +6,8 @@
 			src: url("/static/font/Junction.otf") format("opentype");
 		}
 		body {
-			background:url(/static/diary.jpg) fixed no-repeat 100%!important;
+			background:url(/static/diary1.jpg) no-repeat !important;
+			background-size:cover !important;
 			font-family:Junction, serif !important;
 		}
 		div.col-lg-7 {
@@ -53,12 +54,30 @@
 			text-shadow: 2px !important;
 			font-size: 1.5em !important;
 		}
+		ul.messages {
+			font-size:50%;
+			color:tomato;
+			list-style-type: none;
+		}
 	</style>
 	<body>
 		{% include "navbar.html" %}
 		<div class = "row" style = "padding-left:150px;">
 			<div class = "col-lg-7 col-lg-offset-2 col-md-6 col-md-offset-2 col-sm-7 col-sm-offset-1 col-xs-8 col-xs-offset-0">
-				<label class = "title">{{query.highlight}}</label><br>
+				<label class = "title">
+				{% if messages %}
+				<ul class = "messages">
+					{% for message in messages %}
+						<li {% if message.tags %}
+							class = "{{ message.tags }}"
+							{% endif %}>
+								{{ message }}
+						</li>
+					{% endfor %}
+				</ul>
+				{% endif %}
+				{{query.highlight}}
+				</label><br>
 				<div class = "crop">
 					<img src = "/media/{{query.photo}}">
 				</div><br>

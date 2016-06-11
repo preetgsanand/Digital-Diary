@@ -4,4 +4,5 @@ urlpatterns = [
     url(r'^$', views.create),
     url(r'^list/$', views.list),
     url(r'^list/(?P<id>\d+)/$',views.detail,name="detail"),
+    url(r'^update/(?P<id>\d+)/$',views.update,name="update")
 ]
